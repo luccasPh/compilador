@@ -1,0 +1,5 @@
+//
+se if i <= 3
+se if i >= 4
+equanto i => 1
+//
