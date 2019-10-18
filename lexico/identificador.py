@@ -2,6 +2,17 @@ import re
 
 class Indentificador:
 
+    def reservado(entrada):
+        palavra = ["programa", "se", "entao", "senao", "enquanto", "faca", "ate", "repita", "inteiro", "real",
+                   "caractere", "caso", "escolha", "fimescolha", "procedimento", "funcao", "de", "para", "fimse",
+                   "inicio", "fim"]
+        
+        if entrada in palavra:
+            return True
+        
+        else:
+            return False
+
     def automoto(entrada):
         estado = 0
         i = 0

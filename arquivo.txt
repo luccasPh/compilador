@@ -1,5 +1,5 @@
-//
-se if i <= 3
-se if i >= 4
-equanto i => 1
+// 
+se j >= 3,24
+se j >= 3,24
+se j >= 3,24 
 //

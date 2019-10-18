@@ -8,31 +8,34 @@ class Digito:
         while i < len(entrada):
             simb = entrada[i]
             if estado == "0":
-                if re.match(r"[0-9]", simb):
+                if re.match(r"[0-9]", simb) != None:
                     estado = "1A"
 
                 elif simb == "-":
                     estado = "1B"
                 
                 else:
-                    break
+                    estado = "0"
             
             elif estado == "1A":
-                if re.match(r"[0-9,]", simb):
+                if re.match(r"[0-9]", simb) != None:
                     estado = "2A"
                 
+                elif simb == ",":
+                    estado = "1B"
+
                 else:
-                    break
-            
+                    estado = None 
+
             elif estado == "1B":
-                if re.match(r"[0-9]", simb):
+                if re.match(r"[0-9]", simb) != None:
                     estado = "1A"
                 
                 else:
                     break
             
             elif estado == "2A":
-                if re.match(r"[0-9]", simb):
+                if re.match(r"[0-9]", simb) != None:
                     estado = "2A"
                 
                 else:
