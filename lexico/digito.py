@@ -1,50 +1,46 @@
 import re
 
 class Digito:
+    #automoto para gera o tolken
+    @staticmethod
+    def automoto(simb, estado):
+        if estado == "q0":
+            if re.match(r"[0-9]", simb):
+                return "q1-1"
 
-    def automoto(entrada):
-        estado = "0"
-        i = 0
-        while i < len(entrada):
-            simb = entrada[i]
-            if estado == "0":
-                if re.match(r"[0-9]", simb) != None:
-                    estado = "1A"
-
-                elif simb == "-":
-                    estado = "1B"
-                
-                else:
-                    estado = "0"
+            elif simb == "-":
+                return "q1-2"
             
-            elif estado == "1A":
-                if re.match(r"[0-9]", simb) != None:
-                    estado = "2A"
-                
-                elif simb == ",":
-                    estado = "1B"
+            else:
+                return False
 
-                else:
-                    estado = None 
-
-            elif estado == "1B":
-                if re.match(r"[0-9]", simb) != None:
-                    estado = "1A"
-                
-                else:
-                    break
+        elif estado == "q1-1":
+            if re.match(r"[0-9]", simb):
+                return "q1-1"
             
-            elif estado == "2A":
-                if re.match(r"[0-9]", simb) != None:
-                    estado = "2A"
-                
-                else:
-                    break
+            elif simb == ",":
+                return "q2"
             
-            i += 1
+            else:
+                False
 
-        if estado == "2A" or estado == "1A":
-            return True
+        elif estado == "q1-2":
+            if re.match(r"[0-9]", simb):
+                return "q1-1"
+            
+            else:
+                return False
 
-        else:
-            return False
+        elif estado == "q2":
+            if re.match(r"[0-9]", simb):
+                return "q3"
+            
+            else:
+                return False
+
+        elif estado == "q3":
+            if re.match(r"[0-9]", simb):
+                return "q3"
+            
+            else:
+                return False

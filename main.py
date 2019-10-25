@@ -1,6 +1,11 @@
 from lexico.lexico import Lexico
 
-with open('arquivo.txt', 'r') as file:
-    data = file.read().replace('\n', '')
+arquivo = open("arquivo.txt", "r")
 
-print(data)
+#inicializar o lexico
+lexico = Lexico()
+
+#analisa o arquivo passado
+lexico.analisador(arquivo)
+
+

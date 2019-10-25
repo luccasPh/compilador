@@ -1,35 +1,34 @@
 import re
 
 class SimboloEspecial:
-    
-    def automoto(entrada):
-        estado = 0
-        i = 0
-        while i < len(entrada):
-            simb = entrada[i]
-            if estado == 0:
-                if re.match(r"[.;,*()={}|@]", simb):
-                    estado = None
+    #automoto para gera o tolken
+    @staticmethod
+    def automoto(simb, estado):
+        if estado == "q0":
+            if re.match(r"[.;,*()={}|@]", simb):
+                return "q2"
 
-                elif re.match(r"[+-<>:]", simb):
-                    estado = 1
-
-                else:
-                    break
+            elif re.match(r"[-+>:]", simb):
+                return "q1-1"
             
-            elif estado == 1:
-                if re.match(r"[=>]", simb):
-                    estado = 2
-                
-                else:
-                    estado = None
-            
-            i += 1
-        
-        if estado == 1 or estado == 2:
-            return True
+            elif simb == "<":
+                return "q1-2"
 
-        else:
-            return False
+            else:
+                return False
+
+        elif estado == "q1-1":
+            if re.match(r"[=]", simb):
+                return "q2"
+            
+            else:
+                return False
+
+        elif estado == "q1-2":
+            if re.match(r"[>=]", simb):
+                return "q2"
+            
+            else:
+                return False
 
 
