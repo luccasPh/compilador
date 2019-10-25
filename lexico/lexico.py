@@ -1,4 +1,4 @@
-from lexico.indentificador import Indentificador as inde
+from lexico.identificador import Identificador as iden
 from lexico.digito import Digito as digi
 from lexico.simbolo_especial import SimboloEspecial as simb
 from lexico.comentario import Comentario as come
@@ -22,7 +22,7 @@ class Lexico:
                     if linha[i:2] == "@@" or linha[i:2] == "//" or linha[i:2] == "..":
                         self.auto = 1
 
-                    elif inde.automoto(linha[i], self.estado):
+                    elif iden.automoto(linha[i], self.estado):
                         self.auto = 2
                     
                     elif linha[i] == "-":
@@ -57,11 +57,11 @@ class Lexico:
                         self.estado = come.automoto(linha[i], self.estado)
                         i += 1
                         
-                #automo de indetificador/palavra reservada quando for selecionado
+                #automo de identificador/palavra reservada quando for selecionado
                 elif self.auto == 2:
                     #verifica se o caracter e valido no automato
-                    if inde.automoto(linha[i], self.estado):
-                        self.estado = inde.automoto(linha[i], self.estado)
+                    if iden.automoto(linha[i], self.estado):
+                        self.estado = iden.automoto(linha[i], self.estado)
                         self.tolken += linha[i]
                         i += 1
                     
@@ -69,7 +69,7 @@ class Lexico:
                         #encerra o automato
                         if self.estado == "q1" or self.estado == "q3":
                             #verifica se e palavra reservada
-                            if inde.palavra_reservada(self.tolken):
+                            if iden.palavra_reservada(self.tolken):
                                 print(f"RESERVADO: [{self.tolken}]")
                             
                             else:

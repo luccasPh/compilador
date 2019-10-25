@@ -1,6 +1,6 @@
 import re
 
-class Indentificador:
+class Identificador:
     #verifica se o tolken e palavara reservada
     @staticmethod
     def palavra_reservada(entrada):
