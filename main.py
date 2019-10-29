@@ -7,5 +7,3 @@ lexico = Lexico()
 
 #analisa o arquivo passado
 lexico.analisador(arquivo)
-
-

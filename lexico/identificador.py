@@ -4,11 +4,31 @@ class Identificador:
     #verifica se o tolken e palavara reservada
     @staticmethod
     def palavra_reservada(entrada):
-        palavra = ["programa", "se", "entao", "senao", "enquanto", "faca", "ate", "repita", "inteiro", "real",
-                   "caractere", "caso", "escolha", "fimescolha", "procedimento", "funcao", "de", "para", "fimse",
-                   "inicio", "fim"]
+        reservada = [
+            "programa", 
+            "se", 
+            "entao", 
+            "senao", 
+            "enquanto", 
+            "faca", 
+            "ate", 
+            "repita", 
+            "inteiro", 
+            "real",
+            "caractere", 
+            "caso", 
+            "escolha", 
+            "fimescolha", 
+            "procedimento", 
+            "funcao", 
+            "de", 
+            "para", 
+            "fimse",
+            "inicio", 
+            "fim"
+        ]
         
-        if entrada in palavra:
+        if entrada in reservada:
             return True
         
         else:
