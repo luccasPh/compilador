@@ -1,7 +1,6 @@
 import re
 
 class Comentario:
-
     #automoto para gera o tolken
     @staticmethod
     def automoto(simb, estado):

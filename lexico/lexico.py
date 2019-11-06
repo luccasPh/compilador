@@ -47,9 +47,7 @@ class Lexico:
                 pass
 
             else:
-                print(f"ERROR: [{linha[i]}]")
-
-            return False
+                return -1
         
     
     def chamar_automoto(self, linha, i):
@@ -92,7 +90,7 @@ class Lexico:
                         print(f"IDENTIFICADOR: [{self.tolken}]")
                 
                 else:
-                    print(f"ERROR: [{self.tolken}]")
+                    return -1
 
                 #limpa o tolken e reinicia o estado e automoto
                 self.tolken = ""
@@ -116,7 +114,8 @@ class Lexico:
                     print(f"DIGITO: [{self.tolken}]")
                 
                 else:
-                    print(f"ERROR: [{self.tolken}]")
+                    return -1
+
                 #limpa o tolken e reinicia o estado e automoto
                 self.tolken = ""
                 self.estado = "q0"
@@ -139,7 +138,7 @@ class Lexico:
                     print(f"SIMBOLO: [{self.tolken}]")
                 
                 else:
-                    print(f"ERROR: [{self.tolken}]")
+                    return -1
                 
                 #limpa o tolken e reinicia o estado e automoto
                 self.tolken = ""
@@ -151,7 +150,7 @@ class Lexico:
     
     def analisador(self, arquivo):
         for linha in arquivo.readlines():
-            linha += "\n" #gambiarra para fazer reconhecer ultimo caracter da linha
+            linha += "\n"
             i = 0
             while i < len(linha):
                 #seleciona o automo com base no caracter da linha selecionada
@@ -160,7 +159,11 @@ class Lexico:
                         i += 1
                 
                 else:
-                    if self.chamar_automoto(linha, i):
+                    situ = self.chamar_automoto(linha, i)
+                    if situ:
+                        if situ == -1:
+                            print(f"ERROR LEXICO")
+                            return
                         i += 1
                 
         
