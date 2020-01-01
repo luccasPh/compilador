@@ -21,13 +21,19 @@ class Identificador:
             "fimescolha", 
             "procedimento", 
             "funcao", 
-            "de", 
+            "do", 
             "para", 
             "fimse",
             "inicio", 
-            "fim"
+            "fim",
+            "tipo",
+            "var",
+            "imprima",
+            "leia",
+            "boleano",
+            "ou",
+            "e",
         ]
-        
         if entrada in reservada:
             return True
         

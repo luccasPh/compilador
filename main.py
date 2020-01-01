@@ -1,13 +1,17 @@
 from lexico.lexico import Lexico
 
-arquivo = open("arquivo.txt", "r")
+arquivo = open("teste1.txt", "r")
 
 #inicializar o lexico
 lexico = Lexico()
 
 #analisa o arquivo passado
-lexico.analisador(arquivo)
-
-
-
-
+res = lexico.analisador(arquivo)
+print(next(res))
+print(next(res))
+print(next(res))
+print(next(res))
+print(next(res))
+print(next(res))
+print(next(res))
+print(next(res))

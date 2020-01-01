@@ -1,0 +1,28 @@
+programa main;
+    tipo int = a; bool = b; float = y;
+    var x, a, t, r:int; y,h:bool;
+
+    procedimento prod1(x,a,t:int; x,b:char);
+        tipo int = a; bool = b; float = y;  
+        @@var x, a, t, r:int; y,h:bool
+
+    funcao func1(x,y:float; j:double):aux;
+        tipo int = a; bool = b; float = y;
+        var x, a, t, r:int; y,h:bool;
+
+    inicio
+        //
+        x := x + -45,56 / 45;
+        y := x * (100 + x);
+        x(z => y);
+        //
+        se a = 3 entao 
+            imprima(a);
+        senao 
+            a := b + a;
+
+        enquanto a < b do
+            leia(b);
+            a := b * a;
+            imprima(a);
+    fim
