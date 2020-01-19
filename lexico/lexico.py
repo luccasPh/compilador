@@ -13,6 +13,7 @@ class Lexico:
         self.auto = 0 #seleciona o automo
         self.tolken_id = ""
         self.linha = 0
+        self.error = False
     
     def selecionar_automoto(self, linha, i):
         if re.match(r"[ \n\t]", linha[i]):
@@ -151,6 +152,7 @@ class Lexico:
                     situ = self.chamar_automoto(linha, i)
                     if situ == -1:
                         print(f"ERROR Lexico linha {self.linha}: {self.tolken_value}")
+                        self.error = True
                         sys.exit()
 
                     elif situ == True:
@@ -166,4 +168,5 @@ class Lexico:
         #verifica no final se automoto de cometario ainda esta selecionado
         if self.auto == 1:
             print(f"ERROR Lexico linha {self.linha}: cometario não fechado")
+            self.error = True
             sys.exit()

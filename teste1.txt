@@ -11,11 +11,11 @@ programa main;
         var x, a, t, r:int; y,h:bool;
 
     inicio
-        //
+        ////
         x := x + -45,56 / 45;
         y := x * (100 + x);
         x(z => y);
-        //
+        
         se a = 3 entao 
             imprima(a);
         senao 
