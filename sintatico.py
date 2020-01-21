@@ -60,7 +60,8 @@ class Sintatico(Lexico):
         except:
             sys.exit()
             pass
-
+        
+        print("Tudo ok")
     # DECLARAÇOES
     def declara_tipo(self):
         try:
@@ -469,7 +470,7 @@ class Sintatico(Lexico):
 
             elif cod_tolken == "(":
                 cod_tolken = self.expressao()
-                print("aki 1")
+                
 
             else:
                 break
